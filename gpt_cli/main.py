@@ -87,6 +87,23 @@ def ask(
     ]
 
     print(Panel(Group(*blocks), title="gpt-cli"))
+@app.command("mode")
+def mode(
+    request_type: str = typer.Argument(..., help="select the type of requests you want (cli, programmer, file assistant, custom)"),
+    custom_prompt: t.Optional[str] = typer.Option(None, "--custom-prompt", help="A custom prompt to use."),
+    file_location: t.Optional[str] = typer.Option(None, "--file-location", help="Path to a file containing a custom prompt."),
+):
+    """
+    # set the type of requests you want
+    options:
+    -cli
+    -programmer
+    -file assistant
+    -custom: this custom mode allows you to set your own prompt for the AI to follow. 
+        You can specify the prompt in a separate file and provide the file path as an argument.
+    """
+    
+    pass
 
 if __name__ == "__main__":
     app()
