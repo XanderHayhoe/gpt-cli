@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpt-cli"
+version = "0.0.1"
+requires-python = ">=3.9"
+dependencies = ["typer>=0.12", "rich>=13.7", "openai>=1.0"]
+
+[project.scripts]
+gpt-cli = "gpt_cli.main:app"
